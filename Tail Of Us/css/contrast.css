@@ -1,0 +1,6 @@
+:root[data-theme="contrast"] {
+  --bg: #000000; --surface: #000000; --text: #FFFFFF; --text-muted: #FFFFFF;
+  --primary: #FFE600; --on-primary: #000000; --accent: #FFE600; --border: #FFFFFF;
+  --focus: #00E5FF; --error: #FF9A9A; --success: #8DFF8D;
+}
+:root[data-theme="contrast"] :focus { outline-width: 4px; }

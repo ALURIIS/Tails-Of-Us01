@@ -1,0 +1,54 @@
+/* Contact page: layout plus the form/error styles this page needs. Colours and fonts come from base.css, shell.css and contrast.css. */
+
+.contact-page { padding-top: 1.5rem; padding-bottom: 2.5rem; }
+
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0 0 0.75rem; padding: 0; font-size: 0.9rem; }
+.breadcrumb li + li::before { content: "/"; margin-right: 0.4rem; }
+
+.contact-banner { padding: 1.5rem 0; border-bottom: 1px solid rgba(128, 128, 128, 0.35); }
+.contact-banner h1 { margin: 0 0 0.75rem; }
+.contact-banner p { max-width: 60ch; margin: 0; }
+
+.sent-notice { margin: 1.5rem 0 0; padding: 0.75rem 1rem; border: 2px solid currentColor; border-radius: 8px; font-weight: 600; }
+
+/* Row 1: details card + photo */
+.contact-top { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; align-items: stretch; }
+.contact-info { flex: 2 1 320px; padding: 1.5rem; }
+.contact-photo { flex: 1 1 240px; width: 100%; min-width: 0; height: auto; min-height: 180px; object-fit: cover; border-radius: 8px; }
+.info-list { display: flex; flex-direction: column; gap: 1.25rem; margin: 0; padding: 0; }
+.info-list li { display: flex; align-items: center; gap: 1rem; }
+.info-list p { margin: 0; }
+.info-icon { flex: none; }
+.info-label { font-weight: 600; }
+
+/* Row 2: form + map */
+.contact-bottom { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; align-items: flex-start; }
+.contact-form-wrap { flex: 1 1 280px; min-width: 0; }
+.map-card { flex: 2 1 360px; min-width: 0; padding: 1rem; }
+.map-card h2 { margin-top: 0; }
+.map-card:focus { outline: none; }
+.map-link { display: block; text-decoration: none; color: inherit; }
+.map-link img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.map-caption { display: block; margin-top: 0.5rem; text-align: center; text-decoration: underline; }
+
+/* Form */
+.req-note { margin: 0 0 1rem; }
+.form-field { margin-bottom: 1rem; }
+.form-field label { display: block; margin-bottom: 0.35rem; font-weight: 700; }
+.form-field input, .form-field textarea { box-sizing: border-box; width: 100%; padding: 0.7rem 0.8rem; font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 6px; }
+.form-field textarea { resize: vertical; }
+.hint { margin: 0.35rem 0 0; font-size: 0.9rem; }
+.error-message { margin: 0.35rem 0 0; font-weight: 600; }
+.error-message:empty { display: none; }
+.form-field.has-error input, .form-field.has-error textarea { border-width: 3px; border-style: dashed; }
+.error-summary { margin-bottom: 1rem; padding: 0.75rem 1rem; border: 2px solid currentColor; border-radius: 8px; }
+.error-summary h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.error-summary ul { margin: 0; padding-left: 1.25rem; }
+.error-summary[hidden], .sent-notice[hidden] { display: none; }
+.form-actions { margin-top: 1.25rem; }
+
+@media (max-width: 600px) {
+  .contact-top, .contact-bottom { flex-direction: column; }
+  .contact-info, .contact-photo, .contact-form-wrap, .map-card { flex-basis: auto; }
+  .form-actions .btn { width: 100%; }
+}

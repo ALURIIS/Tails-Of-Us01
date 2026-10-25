@@ -1,0 +1,19 @@
+/* Sitemap page */
+.sm-page { display: grid; gap: 1.5rem; padding: 1.5rem 0 2.5rem; }
+.sm-banner, .sm-wrap { padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; }
+.sm-banner h1 { margin-bottom: .5rem; }
+.sm-banner p { max-width: 40rem; margin: 0; }
+.sm-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.sm-box { padding: 1.25rem 1.5rem; border: 2px solid var(--primary); border-radius: .75rem; }
+.sm-box > li + li { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--text-muted); }
+.sm-box > li > a { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; }
+.sm-sub { margin: .75rem 0 0; padding-left: 2rem; list-style: disc; }
+.sm-sub li { margin-bottom: .5rem; font-size: 1.1rem; font-weight: 600; }
+.sm-box a[aria-current="page"] { padding-bottom: .1rem; border-bottom: 4px solid var(--accent); color: var(--text); text-decoration: none; }
+@media (min-width: 600px) {
+  .sm-banner, .sm-wrap { padding: 1.5rem; }
+}
+@media (min-width: 900px) {
+  .sm-banner, .sm-wrap { padding: 2rem; }
+  .sm-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}

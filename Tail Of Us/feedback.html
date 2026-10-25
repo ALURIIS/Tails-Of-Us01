@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback – Tails of Us</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/feedback.css">
+<link rel="stylesheet" href="css/contrast.css">
+<script src="js/shell.js" defer></script>
+<script src="js/feedback.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="Logo/Logo2SVG.svg" width="60" height="60" alt="">
+      <span>Tails of Us</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" accesskey="h" title="Home (Alt+H)">Home</a></li>
+        <li><a href="news.html" accesskey="n" title="News (Alt+N)">News</a></li>
+        <li><a href="booking.html" accesskey="b" title="Booking (Alt+B)">Booking</a></li>
+        <li><a href="my-bookings.php" accesskey="m" title="My Bookings (Alt+M)">My Bookings</a></li>
+        <li><a href="about.html" accesskey="a" title="About Us (Alt+A)">About Us</a></li>
+        <li><a href="feedback.html" accesskey="f" title="Feedback (Alt+F)" aria-current="page">Feedback</a></li>
+        <li><a href="sitemap.html" accesskey="s" title="Sitemap (Alt+S)">Sitemap</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" accesskey="c" title="Switch Theme (Alt+C)" aria-pressed="false">Switch Theme</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="container fb-page">
+
+  <section class="fb-banner" aria-labelledby="fb-title">
+    <h1 id="fb-title">Tell Us About Your Stay!</h1>
+    <p>Your feedback helps us look after every guest better. Tell us what went well and what we can improve.</p>
+    <p><a href="user-feedbacks.php">Read what other guests say</a></p>
+  </section>
+
+  <div class="fb-form-card">
+    <div id="error-summary" class="error-summary" aria-labelledby="error-title" tabindex="-1" hidden>
+      <h2 id="error-title">Please fix the following</h2>
+      <ul></ul>
+    </div>
+
+    <!-- Checked in the browser by js/feedback.js, then again on the server by process-feedback.php (saved to data/feedback.json) -->
+    <form id="feedback-form" action="process-feedback.php" method="post">
+      <p class="req-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+      <section class="form-section" aria-labelledby="gi-title">
+        <h2 id="gi-title" class="form-title"><img src="Logo/Logo2SVG.svg" width="28" height="28" alt="">General Inquiry</h2>
+
+        <div class="field-row">
+          <div class="form-field">
+            <label for="fullname">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="fullname" name="fullname" placeholder="John Wick" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="fullname-error">
+            <p class="error-message" id="fullname-error"></p>
+          </div>
+          <div class="form-field">
+            <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required maxlength="100" aria-describedby="email-error">
+            <p class="error-message" id="email-error"></p>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+          <select id="subject" name="subject" required aria-describedby="subject-error">
+            <option value="">Select</option>
+            <option value="general">General feedback</option>
+            <option value="booking">Booking experience</option>
+            <option value="care">Veterinary care</option>
+            <option value="facilities">Rooms and facilities</option>
+            <option value="staff">Staff</option>
+            <option value="other">Other</option>
+          </select>
+          <p class="error-message" id="subject-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="6" placeholder="Share your feedback" required minlength="10" maxlength="1000" aria-describedby="message-hint message-error"></textarea>
+          <p class="hint" id="message-hint">Between 10 and 1000 characters. Links are not allowed.</p>
+          <p class="error-message" id="message-error"></p>
+        </div>
+      </section>
+
+      <section class="form-section" aria-labelledby="cs-title">
+        <h2 id="cs-title" class="form-title"><img src="Logo/Logo2SVG.svg" width="28" height="28" alt="">Customer Satisfaction</h2>
+        <fieldset id="rating-group" class="rating-group" aria-describedby="satisfaction-error">
+          <legend>How would you rate your recent booking experience? <span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" id="rating-first" name="satisfaction" value="not-satisfied" required> Not Satisfied</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="satisfied"> Satisfied</label>
+            <label class="choice"><input type="radio" name="satisfaction" value="very-satisfied"> Very Satisfied</label>
+          </div>
+        </fieldset>
+        <p class="error-message" id="satisfaction-error"></p>
+      </section>
+
+      <div class="form-field consent">
+        <label class="choice"><input type="checkbox" id="public" name="public" value="yes" aria-describedby="public-hint"> Show my feedback on the User Feedbacks page</label>
+        <p class="hint" id="public-hint">Optional. Only your first name and the first letter of your last name are shown. Your email is never shown.</p>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Submit Feedback</button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-grid" aria-label="Footer">
+      <div>
+        <h2>Services</h2>
+        <ul class="list-plain">
+          <li><a href="about.html#care">Veterinary Care</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="travel-packages.html">Travel Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul class="list-plain">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html#location">Our Location</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul class="list-plain">
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="news.html">News Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="copyright">&copy; 2026 Tails of Us. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

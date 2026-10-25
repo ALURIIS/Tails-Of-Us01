@@ -1,0 +1,47 @@
+[
+    {
+        "id": "e04a66c763a4",
+        "date": "2026-10-24T16:40:38+00:00",
+        "owner": "Johnny White",
+        "phone": "+230 5838 5555",
+        "address": "adada",
+        "days": 15,
+        "animal": "Pierrot",
+        "birthdate": "2022-06-15",
+        "species": "dog",
+        "room": "standard",
+        "comments": "",
+        "vaccinated": true,
+        "status": "pending"
+    },
+    {
+        "id": "TU-5B8011",
+        "date": "2026-10-24T17:43:03+00:00",
+        "type": "package",
+        "status": "cancelled",
+        "package": "weekend-stay",
+        "waitlist": false,
+        "owner": "Jean",
+        "phone": "+230 5838 5555",
+        "animal": "Pierrot",
+        "species": "cat",
+        "startdate": "2026-10-30",
+        "comments": "",
+        "vaccinated": true
+    },
+    {
+        "id": "TU-7D488E",
+        "date": "2026-10-25T12:56:17+00:00",
+        "type": "package",
+        "status": "waitlisted",
+        "package": "senior-comfort",
+        "waitlist": true,
+        "owner": "Altair",
+        "phone": "+230 5838 5555",
+        "animal": "jeane",
+        "species": "cat",
+        "startdate": "2026-11-18",
+        "comments": "",
+        "vaccinated": true
+    }
+]

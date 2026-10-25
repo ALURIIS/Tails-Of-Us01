@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us – Tails of Us</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/contrast.css">
+<script src="js/shell.js" defer></script>
+<script src="js/contact.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="Logo/Logo2SVG.svg" width="60" height="60" alt="">
+      <span>Tails of Us</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" accesskey="h" title="Home (Alt+H)">Home</a></li>
+        <li><a href="news.html" accesskey="n" title="News (Alt+N)">News</a></li>
+        <li><a href="booking.html" accesskey="b" title="Booking (Alt+B)">Booking</a></li>
+        <li><a href="my-bookings.php" accesskey="m" title="My Bookings (Alt+M)">My Bookings</a></li>
+        <li><a href="about.html" accesskey="a" title="About Us (Alt+A)" aria-current="page">About Us</a></li>
+        <li><a href="feedback.html" accesskey="f" title="Feedback (Alt+F)">Feedback</a></li>
+        <li><a href="sitemap.html" accesskey="s" title="Sitemap (Alt+S)">Sitemap</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" accesskey="c" title="Switch Theme (Alt+C)" aria-pressed="false">Switch Theme</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="container contact-page">
+
+  <section class="contact-banner" aria-labelledby="contact-title">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="about.html">About Us</a></li><li aria-current="page">Contact Us</li></ol></nav>
+    <h1 id="contact-title">Contact Us</h1>
+    <p>Have a question about a stay, your pet's needs or a booking? Send us a message and the team will reply by email.</p>
+  </section>
+
+  <output id="sent-notice" class="sent-notice" hidden>Thank you! Your message has been received and our team will reply by email.</output>
+
+  <!-- Sample contact details: replace with the real ones -->
+  <div class="contact-top">
+    <section class="card contact-info" aria-labelledby="info-title">
+      <h2 id="info-title" class="visually-hidden">Contact details</h2>
+      <ul class="list-plain info-list">
+        <li>
+          <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <div><p class="info-label">Phone</p><p><a href="tel:+23059999999">+230 5999 9999</a></p></div>
+        </li>
+        <li>
+          <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-3.5 7.1"/></svg>
+          <div><p class="info-label">Email</p><p><a href="mailto:hello@tailsofus.example">hello@tailsofus.example</a></p></div>
+        </li>
+        <li>
+          <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><p class="info-label">Opening hours</p><p>Daily, 8:00 – 18:00 (veterinary staff on site)</p></div>
+        </li>
+      </ul>
+    </section>
+    <img class="contact-photo" src="Logo/facility.jpg" width="400" height="260" alt="Reception area of the Tails of Us veterinary hotel">
+  </div>
+
+  <div class="contact-bottom">
+    <div class="contact-form-wrap">
+      <div id="error-summary" class="error-summary" role="alert" aria-labelledby="error-title" tabindex="-1" hidden>
+        <h2 id="error-title">Please fix the following</h2>
+        <ul></ul>
+      </div>
+
+      <!-- Checked in the browser by js/contact.js, then again on the server by process-contact.php (saved to data/contacts.json) -->
+      <form id="contact-form" action="process-contact.php" method="post">
+        <p class="req-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+        <div class="form-field">
+          <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" placeholder="John Wick" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="name-error">
+          <p class="error-message" id="name-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required maxlength="100" aria-describedby="email-error">
+          <p class="error-message" id="email-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?" required minlength="10" maxlength="1000" aria-describedby="message-hint message-error"></textarea>
+          <p class="hint" id="message-hint">Between 10 and 1000 characters. Links are not allowed.</p>
+          <p class="error-message" id="message-error"></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+      </form>
+    </div>
+
+    <section class="card map-card" id="location" aria-labelledby="map-title" tabindex="-1">
+      <h2 id="map-title">Our Location</h2>
+      <!-- Replace the picture with a real map screenshot and the link with the real map URL -->
+      <a class="map-link" href="https://www.openstreetmap.org/" target="_blank" rel="noopener">
+        <img src="Logo/placeholder.jpg" width="640" height="400" alt="Map showing the Tails of Us veterinary hotel">
+        <span class="map-caption">Open our location in maps<span class="visually-hidden"> (opens in a new tab)</span></span>
+      </a>
+    </section>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-grid" aria-label="Footer">
+      <div>
+        <h2>Services</h2>
+        <ul class="list-plain">
+          <li><a href="about.html#care">Veterinary Care</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="travel-packages.html">Travel Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul class="list-plain">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html#location">Our Location</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul class="list-plain">
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="news.html">News Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="copyright">&copy; 2026 Tails of Us. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

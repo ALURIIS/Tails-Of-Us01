@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Booking – Tails of Us</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/contrast.css">
+<script src="js/shell.js" defer></script>
+<script src="js/booking.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="Logo/Logo2SVG.svg" width="60" height="60" alt="">
+      <span>Tails of Us</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" accesskey="h" title="Home (Alt+H)">Home</a></li>
+        <li><a href="news.html" accesskey="n" title="News (Alt+N)">News</a></li>
+        <li><a href="booking.html" accesskey="b" title="Booking (Alt+B)" aria-current="page">Booking</a></li>
+        <li><a href="my-bookings.php" accesskey="m" title="My Bookings (Alt+M)">My Bookings</a></li>
+        <li><a href="about.html" accesskey="a" title="About Us (Alt+A)">About Us</a></li>
+        <li><a href="feedback.html" accesskey="f" title="Feedback (Alt+F)">Feedback</a></li>
+        <li><a href="sitemap.html" accesskey="s" title="Sitemap (Alt+S)">Sitemap</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" accesskey="c" title="Switch Theme (Alt+C)" aria-pressed="false">Switch Theme</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="container booking-page">
+
+  <section class="booking-banner" aria-labelledby="cb-title">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="booking.html">Booking</a></li><li aria-current="page">Contact Booking</li></ol></nav>
+    <h1 id="cb-title">Contact Booking</h1>
+    <p>Fill in the details below and our team will confirm your request by phone or email.</p>
+  </section>
+
+  <output id="sent-notice" class="sent-notice" hidden>Thank you! Your booking request has been received. Our team will contact you to confirm it.</output>
+
+  <div class="booking-form-card">
+    <div id="error-summary" class="error-summary" aria-labelledby="error-title" tabindex="-1" hidden>
+      <h2 id="error-title">Please fix the following</h2>
+      <ul></ul>
+    </div>
+
+    <!-- Checked in the browser by js/booking.js, then again on the server by process-booking.php (saved to data/bookings.json) -->
+    <form id="booking-form" action="process-booking.php" method="post">
+      <p class="req-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+      <div class="field-row">
+        <div class="form-field">
+          <label for="owner">Owner name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="owner" name="owner" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="owner-error">
+          <p class="error-message" id="owner-error"></p>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+230 5123 4567" autocomplete="tel" required maxlength="25" aria-describedby="phone-error">
+          <p class="error-message" id="phone-error"></p>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="address">Address <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="address" name="address" autocomplete="address-line1" required minlength="5" maxlength="150" aria-describedby="address-error">
+        <p class="error-message" id="address-error"></p>
+      </div>
+
+      <div class="field-row">
+        <div class="form-field">
+          <label for="days">Number of days <span class="req" aria-hidden="true">*</span></label>
+          <input type="number" id="days" name="days" min="1" max="90" step="1" inputmode="numeric" required aria-describedby="days-hint days-error">
+          <p class="hint" id="days-hint">From 1 to 90 days.</p>
+          <p class="error-message" id="days-error"></p>
+        </div>
+        <div class="form-field">
+          <label for="animal">Animal name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="animal" name="animal" required maxlength="40" aria-describedby="animal-error">
+          <p class="error-message" id="animal-error"></p>
+        </div>
+        <div class="form-field">
+          <label for="birthdate">Birth date <span class="req" aria-hidden="true">*</span></label>
+          <input type="date" id="birthdate" name="birthdate" required aria-describedby="birthdate-hint birthdate-error">
+          <p class="hint" id="birthdate-hint">Your animal's birth date (an estimate is fine).</p>
+          <p class="error-message" id="birthdate-error"></p>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="species">Species <span class="req" aria-hidden="true">*</span></label>
+        <select id="species" name="species" required aria-describedby="species-error">
+          <option value="">Select</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="bird">Bird</option>
+          <option value="rodent">Small rodent</option>
+          <option value="reptile">Reptile</option>
+          <option value="other">Other</option>
+        </select>
+        <p class="error-message" id="species-error"></p>
+      </div>
+
+      <div class="form-field">
+        <fieldset id="room-group" class="choice-group" aria-describedby="room-error">
+          <legend>Room type <span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" id="room-standard" name="room" value="standard" required> Standard</label>
+            <label class="choice"><input type="radio" id="room-comfort" name="room" value="comfort"> Comfort</label>
+            <label class="choice"><input type="radio" id="room-suite" name="room" value="suite"> Suite</label>
+          </div>
+        </fieldset>
+        <p class="error-message" id="room-error"></p>
+      </div>
+
+      <div class="form-field">
+        <label for="comments">Comments (diets, medications, habits)</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Anything we should know..." maxlength="500" aria-describedby="comments-hint comments-error"></textarea>
+        <p class="hint" id="comments-hint">Optional. Up to 500 characters. Links are not allowed.</p>
+        <p class="error-message" id="comments-error"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="choice"><input type="checkbox" id="vaccinated" name="vaccinated" value="yes" required aria-describedby="vaccinated-error"> I confirm my animal's vaccinations are up to date <span class="req" aria-hidden="true">*</span></label>
+        <p class="error-message" id="vaccinated-error"></p>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Submit Request</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-grid" aria-label="Footer">
+      <div>
+        <h2>Services</h2>
+        <ul class="list-plain">
+          <li><a href="about.html#care">Veterinary Care</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="travel-packages.html">Travel Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul class="list-plain">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html#location">Our Location</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul class="list-plain">
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="news.html">News Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="copyright">&copy; 2026 Tails of Us. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

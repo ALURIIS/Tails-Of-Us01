@@ -1,0 +1,33 @@
+/* About Us page: layout only. Colours, fonts and card/button looks come from base.css, shell.css and contrast.css so both themes keep working. */
+
+.about-page { padding-top: 1.5rem; padding-bottom: 2.5rem; }
+
+.about-banner { padding: 2rem 0 1.5rem; border-bottom: 1px solid rgba(128, 128, 128, 0.35); }
+.about-banner h1 { margin: 0 0 0.75rem; }
+.about-banner p { max-width: 60ch; margin: 0 0 0.5rem; }
+
+.about-section { margin-top: 2rem; }
+.about-section h2 { margin-top: 0; }
+
+/* Image left, text card right (wireframe row) */
+.care-grid { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; align-items: stretch; }
+.care-image { flex: 1 1 280px; width: 100%; min-width: 0; height: auto; min-height: 220px; object-fit: cover; border-radius: 8px; }
+.care-text { flex: 2 1 360px; padding: 1.5rem; }
+.care-text p { max-width: 70ch; }
+
+/* Three team cards in a row */
+.team-list { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; margin: 0; padding: 0; }
+.team-card { flex: 1 1 240px; padding: 1rem; }
+.team-card img { display: block; width: 140px; max-width: 100%; height: auto; border-radius: 6px; margin-bottom: 0.75rem; }
+.team-card h3 { margin: 0 0 0.25rem; }
+.team-card .role { margin: 0 0 0.5rem; font-weight: 600; }
+
+.about-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(128, 128, 128, 0.6); }
+
+#care:focus { outline: none; }
+
+@media (max-width: 600px) {
+  .care-grid, .team-list { flex-direction: column; }
+  .care-image, .care-text, .team-card { flex-basis: auto; }
+  .about-links .btn { flex: 1 1 100%; text-align: center; }
+}

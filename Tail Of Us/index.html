@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tails of Us – Veterinary Hotel for Pets</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/shell.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/contrast.css">
+<script src="js/shell.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Header: identical on every page (final version comes from shell.css / shell.js) -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="Logo/Logo2SVG.svg" width="60" height="60" alt="">
+      <span>Tails of Us</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" accesskey="h" title="Home (Alt+H)" aria-current="page">Home</a></li>
+        <li><a href="news.html" accesskey="n" title="News (Alt+N)">News</a></li>
+        <li><a href="booking.html" accesskey="b" title="Booking (Alt+B)">Booking</a></li>
+        <li><a href="my-bookings.php" accesskey="m" title="My Bookings (Alt+M)">My Bookings</a></li>
+        <li><a href="about.html" accesskey="a" title="About Us (Alt+A)">About Us</a></li>
+        <li><a href="feedback.html" accesskey="f" title="Feedback (Alt+F)">Feedback</a></li>
+        <li><a href="sitemap.html" accesskey="s" title="Sitemap (Alt+S)">Sitemap</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" accesskey="c" title="Switch Theme (Alt+C)" aria-pressed="false">Switch Theme</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 id="hero-title">A veterinary-supervised stay for your pet</h1>
+        <p>Give your pet a vacation just as good as yours. At Tails of Us, we combine 5-star hotel comfort with professional veterinary care so you can travel without a worry.
+        Safe, cozy, and monitored around the clock. Request a booking online anytime—day or night.</p>
+        <p class="actions">
+          <a class="btn btn-icon" href="booking.html"><img src="Logo/Logo2SVG.svg" width="18" height="18" alt="">Book Now</a>
+          <a class="btn btn-secondary" href="travel-packages.html">Explore Packages</a>
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="Logo\Logo2.png" width="640" height="480" alt="Pets relaxing at the Tails of Us veterinary hotel">
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="pkg-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="pkg-title">Featured Stay Packages</h2>
+        <a href="travel-packages.html">View All<span class="visually-hidden"> packages</span></a>
+      </div>
+      <!-- Sample content: sync names, status and ratings with the Travel Packages page -->
+      <ul class="list-plain pkg-grid">
+        <li class="card pkg">
+          <img src="Logo\pkg-weekend-stay.jpg" width="400" height="200" alt="" loading="lazy">
+          <div class="pkg-body">
+            <p class="status status-available">Available</p>
+            <h3>Weekend Stay</h3>
+            <p>A short stay with daily care and play.</p>
+            <p class="rating"><span aria-hidden="true">★</span> 4.9 <span class="visually-hidden">out of 5,</span> (28 reviews)</p>
+            <a class="btn btn-block" href="package-booking.php?package=weekend-stay">Book Now<span class="visually-hidden"> – Weekend Stay</span></a>
+          </div>
+        </li>
+        <li class="card pkg">
+          <img src="Logo\pkg-senior-comfort.jpg" width="400" height="200" alt="" loading="lazy">
+          <div class="pkg-body">
+            <p class="status status-booked">Booked</p>
+            <h3>Senior Comfort</h3>
+            <p>Extra attention for older pets.</p>
+            <p class="rating"><span aria-hidden="true">★</span> 5.0 <span class="visually-hidden">out of 5,</span> (34 reviews)</p>
+            <a class="btn btn-secondary btn-block" href="package-booking.php?package=senior-comfort">Join Waitlist<span class="visually-hidden"> – Senior Comfort</span></a>
+          </div>
+        </li>
+        <li class="card pkg">
+          <img src="Logo\pkg-medical-support.jpg" width="400" height="200" alt="" loading="lazy">
+          <div class="pkg-body">
+            <p class="status status-available">Available</p>
+            <h3>Medical Support</h3>
+            <p>For pets that need medication or monitoring.</p>
+            <p class="rating"><span aria-hidden="true">★</span> 4.8 <span class="visually-hidden">out of 5,</span> (22 reviews)</p>
+            <a class="btn btn-block" href="package-booking.php?package=medical-support">Book Now<span class="visually-hidden"> – Medical Support</span></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="container two-col">
+    <section aria-labelledby="news-title">
+      <h2 id="news-title">Latest News</h2>
+      <ul class="list-plain news-list">
+        <li class="card news-item">
+          <img src="Logo\facility.jpg" width="400" height="200" alt="" loading="lazy">
+          <div class="news-body">
+            <p class="tag">New Facility</p>
+            <h3><a href="news-new-facility.html">New Facility Opening</a></h3>
+            <p>More space and extra comfort for every guest.</p>
+          </div>
+        </li>
+        <li class="card news-item">
+          <img src="Logo\news-community-open-day.jpg" width="400" height="200" alt="" loading="lazy">
+          <div class="news-body">
+            <p class="tag">Community</p>
+            <h3><a href="news-community.html">Community Open Day</a></h3>
+            <p>Meet the team and see how a stay works.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <aside class="sidebar">
+      <section class="card side-card" aria-labelledby="fb-title">
+        <h2 id="fb-title">Guest Feedback</h2>
+        <figure class="quote">
+          <blockquote><p>The team kept me updated every day, and my dog came home happy.</p></blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">JD</span>
+            <span>Jolene Diana</span>
+            <span class="stars"><span aria-hidden="true">★★★★★</span><span class="visually-hidden">5 out of 5 stars</span></span>
+          </figcaption>
+        </figure>
+        <a class="btn btn-secondary btn-block" href="feedback.html">Leave Feedback</a>
+      </section>
+
+      <nav class="side-card" aria-labelledby="qn-title">
+        <h2 id="qn-title">Quick Navigation</h2>
+        <ul class="list-plain quick-list">
+          <li><a class="icon-link" href="contact.html#location"><img src="Logo/Logo2SVG.svg" width="16" height="16" alt="">Our Location</a></li>
+          <li><a class="icon-link" href="contact.html"><img src="Logo/Logo2SVG.svg" width="16" height="16" alt="">Contact Us</a></li>
+          <li><a class="icon-link" href="sitemap.html"><img src="Logo/Logo2SVG.svg" width="16" height="16" alt="">Sitemap</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+</main>
+
+<!-- Footer: identical on every page (final version comes from shell.css) -->
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-grid" aria-label="Footer">
+      <div>
+        <h2>Services</h2>
+        <ul class="list-plain">
+          <li><a href="about.html#care">Veterinary Care</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="travel-packages.html">Travel Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul class="list-plain">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html#location">Our Location</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul class="list-plain">
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="news.html">News Posts</a></li>
+        </ul>
+      </div>
+    </nav>
+    <p class="copyright">&copy; 2026 Tails of Us. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* Feedback page */
+.fb-page { display: grid; gap: 1.5rem; padding: 1.5rem 0 2.5rem; }
+.fb-banner, .fb-form-card { padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; }
+.fb-banner h1 { margin-bottom: .5rem; }
+.fb-banner p { max-width: 40rem; margin: 0; }
+.req-note { margin: 0 0 1.5rem; color: var(--text-muted); }
+.req { color: var(--error); }
+.form-section { margin-bottom: 2rem; }
+.form-title { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; font-size: 1.25rem; }
+.form-title img { flex: none; width: 1.75rem; height: 1.75rem; }
+.field-row { display: grid; grid-template-columns: 1fr; gap: 0 1.5rem; }
+.form-field textarea { min-height: 9rem; resize: vertical; }
+.hint { margin: .25rem 0 0; font-size: .9rem; color: var(--text-muted); }
+.error-message:empty { display: none; }
+.rating-group { margin: 0; padding: 0; border: 0; }
+.rating-group legend { margin-bottom: .75rem; padding: 0; font-weight: 700; }
+.choices { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+.choice { display: inline-flex; align-items: center; gap: .5rem; font-size: 1.125rem; cursor: pointer; }
+.choice input { width: 1.5rem; height: 1.5rem; margin: 0; }
+.form-actions { display: flex; justify-content: flex-end; }
+.error-summary { margin-bottom: 1.5rem; padding: 1rem 1.25rem; border: 2px solid var(--error); border-radius: .5rem; }
+.error-summary h2 { margin: 0 0 .5rem; font-size: 1.1rem; color: var(--error); }
+.error-summary ul { margin: 0; padding-left: 1.25rem; }
+.error-summary a { color: var(--error); font-weight: 600; }
+.success { padding: 1.5rem; border: 2px solid var(--success); border-radius: .75rem; }
+.success h2 { color: var(--success); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0; }
+@media (min-width: 600px) {
+  .fb-banner, .fb-form-card { padding: 1.5rem; }
+  .field-row { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+  .fb-banner, .fb-form-card { padding: 2rem; }
+}
+
+/* Consent checkbox */
+.consent { margin-top: -.5rem; margin-bottom: 1.5rem; }
+.consent .choice { font-size: 1rem; }
+
+/* User Feedbacks page */
+.fb-banner p + p { margin-top: .75rem; }
+.sent-notice { margin: 0; padding: 1rem 1.25rem; border: 2px solid var(--success); border-radius: .5rem; background: var(--surface); font-weight: 600; }
+.tally { margin: 0; color: var(--text-muted); font-weight: 600; }
+.review-list { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.review { padding: 1.25rem; }
+.review p { margin: 0 0 .5rem; }
+.review h2 { margin: .5rem 0 .25rem; font-size: 1.15rem; }
+.review-meta { color: var(--text-muted); }
+.review-meta strong { color: var(--text); }
+.badge { display: inline-block; padding: .1rem .75rem; border: 2px solid var(--text); border-radius: 2rem; font-size: .875rem; font-weight: 700; }
+.badge-very-satisfied { background: var(--success); border-color: var(--success); color: var(--on-primary); }
+.badge-satisfied { border-color: var(--success); color: var(--text-muted); }
+.badge-not-satisfied { color: var(--text); }
+.empty { padding: 1.5rem; }
+.fb-pager { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.pager-status { margin: 0; font-weight: 600; }
+.page-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 2px solid var(--primary); border-radius: 50%; font-size: 1.25rem; text-decoration: none; }
+a.page-arrow:hover { background: var(--primary); color: var(--on-primary); }
+.page-arrow-off { border-color: transparent; }
+@media (min-width: 900px) { .review-list { grid-template-columns: 1fr 1fr; } }
